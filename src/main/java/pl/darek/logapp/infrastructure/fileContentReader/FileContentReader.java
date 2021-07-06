@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.IOException;
 
 @Service
-class FileContentReader implements EventFileContentReader {
+public class FileContentReader implements EventFileContentReader {
     private LineIterator iterator = null;
     private static final Logger logger
             = LoggerFactory.getLogger(FileContentReader.class);

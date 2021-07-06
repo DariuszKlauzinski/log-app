@@ -1,5 +1,6 @@
+package pl.darek.logapp.domain;
+
 import lombok.*;
-import pl.darek.logapp.domain.LogEvent;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

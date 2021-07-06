@@ -8,7 +8,7 @@ import pl.darek.logapp.domain.exceptions.LogReaderException;
 import pl.darek.logapp.domain.ports.EventLogDatabase;
 
 @Repository
-class HsqldbLogEventRepository implements EventLogDatabase {
+public class HsqldbLogEventRepository implements EventLogDatabase {
     private HsqldbCrudRepository hsqldbCrudRepository;
     private static final Logger logger
             = LoggerFactory.getLogger(HsqldbLogEventRepository.class);

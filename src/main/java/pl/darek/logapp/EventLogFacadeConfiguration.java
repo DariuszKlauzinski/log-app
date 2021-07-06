@@ -1,4 +1,4 @@
-package pl.darek.logapp.infrastructure.configuration;
+package pl.darek.logapp;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,6 +7,7 @@ import pl.darek.logapp.domain.ports.EventFileContentReader;
 import pl.darek.logapp.domain.ports.EventLogDatabase;
 
 @Configuration
+public
 class EventLogFacadeConfiguration {
 
     @Bean

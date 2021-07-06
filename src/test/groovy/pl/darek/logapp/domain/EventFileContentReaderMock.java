@@ -1,3 +1,5 @@
+package pl.darek.logapp.domain;
+
 import pl.darek.logapp.domain.LogEvent;
 import pl.darek.logapp.domain.exceptions.LogReaderException;
 import pl.darek.logapp.domain.ports.EventFileContentReader;

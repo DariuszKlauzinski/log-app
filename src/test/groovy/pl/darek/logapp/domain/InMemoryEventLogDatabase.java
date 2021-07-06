@@ -1,4 +1,5 @@
-import pl.darek.logapp.domain.LogEvent;
+package pl.darek.logapp.domain;
+
 import pl.darek.logapp.domain.exceptions.LogReaderException;
 import pl.darek.logapp.domain.ports.EventLogDatabase;
 

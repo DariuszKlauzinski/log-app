@@ -1,3 +1,5 @@
+package pl.darek.logapp.infrastructore
+
 import spock.lang.Specification
 import pl.darek.logapp.domain.LogEvent
 import pl.darek.logapp.domain.ports.EventFileContentReader

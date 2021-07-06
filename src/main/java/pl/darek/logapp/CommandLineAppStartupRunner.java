@@ -1,4 +1,4 @@
-package pl.darek.logapp.infrastructure.configuration;
+package pl.darek.logapp;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

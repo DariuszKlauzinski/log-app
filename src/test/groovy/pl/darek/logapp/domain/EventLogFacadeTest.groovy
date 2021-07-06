@@ -1,5 +1,6 @@
-import pl.darek.logapp.domain.EventLogFacade
-import pl.darek.logapp.domain.LogEvent
+package pl.darek.logapp.domain
+
+
 import pl.darek.logapp.domain.ports.EventFileContentReader
 import pl.darek.logapp.domain.ports.EventLogDatabase
 import spock.lang.Specification
