@@ -1,7 +1,7 @@
+import spock.lang.Specification
 import pl.darek.logapp.domain.LogEvent
 import pl.darek.logapp.domain.ports.EventFileContentReader
 import pl.darek.logapp.infrastructure.fileContentReader.FileContentReader
-import spock.lang.Specification
 
 class FileContentReaderTest extends Specification {
 

@@ -6,18 +6,19 @@ import pl.darek.logapp.domain.exceptions.LogReaderException;
 import pl.darek.logapp.domain.ports.EventFileContentReader;
 import pl.darek.logapp.domain.ports.EventLogDatabase;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class EventLogFacade {
     private EventFileContentReader eventFileContentReader;
+    private EventLogDatabase eventLogDatabase;
     private final Map<String, LogEvent> singleDtoMap;
     private static final Logger logger
             = LoggerFactory.getLogger(EventLogFacade.class);
 
-    public EventLogFacade(EventFileContentReader eventFileContentReader) {
+    public EventLogFacade(EventFileContentReader eventFileContentReader, EventLogDatabase eventLogDatabase) {
         this.eventFileContentReader = eventFileContentReader;
+        this.eventLogDatabase = eventLogDatabase;
         this.singleDtoMap = new HashMap<>();
     }
 
@@ -58,7 +59,16 @@ public class EventLogFacade {
     }
 
     public void saveEvent(LogEvent logEvent, long duration) {
-
+        try {
+            eventLogDatabase.saveEvent(
+                    logEvent,
+                    duration,
+                    duration > 4
+            );
+        } catch (LogReaderException e) {
+            logger.info("LogReaderException occurred.");
+            logger.info("Exception: {}", e.getMessage());
+        }
     }
 
 }

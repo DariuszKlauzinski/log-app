@@ -24,7 +24,7 @@ class EventLogFacadeTest extends Specification {
         content.add(new LogEvent("id", "STARTED", "APPLICATION_LOG","HOST", 1491377495212));
         content.add(new LogEvent("id", "FINISHED", "APPLICATION_LOG","HOST", 1491377495217));
         and: "an eventLogFacade is created"
-        eventLogFacade = new EventLogFacade(eventFileContentReader);
+        eventLogFacade = new EventLogFacade(eventFileContentReader, eventLogDatabase);
         when: "we read and process event file"
         eventLogFacade.readAndProcessEventsFile("path")
         then: "we get saved event with positive alert flag"
@@ -36,7 +36,7 @@ class EventLogFacadeTest extends Specification {
         content.add(new LogEvent("id", "STARTED", "APPLICATION_LOG","HOST", 1491377495212));
         content.add(new LogEvent("id", "FINISHED", "APPLICATION_LOG","HOST", 1491377495213));
         and: "an eventLogFacade is created"
-        eventLogFacade = new EventLogFacade(eventFileContentReader);
+        eventLogFacade = new EventLogFacade(eventFileContentReader, eventLogDatabase);
         when: "we read and process event file"
         eventLogFacade.readAndProcessEventsFile("path")
         then: "we get saved event with negative alert flag"
@@ -47,7 +47,7 @@ class EventLogFacadeTest extends Specification {
         given: "a log with example data"
         def logEvent = new LogEvent("id", "STARTED", "APPLICATION_LOG","HOST", 1491377495212)
         and: "an eventLogFacade is created"
-        eventLogFacade = new EventLogFacade(eventFileContentReader);
+        eventLogFacade = new EventLogFacade(eventFileContentReader, eventLogDatabase);
         when: "we save event"
         eventLogFacade.saveEvent(logEvent, 5)
         then: "we get saved event with positive alert flag"
@@ -58,7 +58,7 @@ class EventLogFacadeTest extends Specification {
         given: "a log with example data"
         def logEvent = new LogEvent("id", "STARTED", "APPLICATION_LOG","HOST", 1491377495212)
         and: "an eventLogFacade is created"
-        eventLogFacade = new EventLogFacade(eventFileContentReader);
+        eventLogFacade = new EventLogFacade(eventFileContentReader, eventLogDatabase);
         when: "we save event"
         eventLogFacade.saveEvent(logEvent, 2)
         then: "we get saved event with negative alert flag"

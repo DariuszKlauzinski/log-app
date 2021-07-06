@@ -1,3 +1,5 @@
+package pl.darek.logapp.infrastructure.hsqlDb;
+
 import lombok.*;
 import pl.darek.logapp.domain.LogEvent;
 
@@ -12,7 +14,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "log")
-class LogEventInMemoryEntity {
+class LogEventEntity {
     @Id
     private String id;
     private Long duration;
@@ -20,8 +22,8 @@ class LogEventInMemoryEntity {
     private String host;
     private Boolean alert;
 
-    public static LogEventInMemoryEntity toLogEventInMemoryEntity(LogEvent logEvent, long duration, Boolean alert) {
-        return LogEventInMemoryEntity.builder()
+    public static LogEventEntity toLogEventEntity(LogEvent logEvent, long duration, Boolean alert) {
+        return LogEventEntity.builder()
                 .id(logEvent.getId())
                 .duration(duration)
                 .type(logEvent.getType())
