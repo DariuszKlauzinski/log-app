@@ -10,4 +10,4 @@
 3. If you get '.jar' file you can start application, for that you must run command
 `java -jar log-app-0.0.1.jar {path to your file with logs}`
 
-#### Remember about adding adding program arguments for running. Enjoy!
+#### Remember about adding program arguments for running. Enjoy!
