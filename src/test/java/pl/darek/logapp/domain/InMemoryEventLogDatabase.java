@@ -5,7 +5,7 @@ import pl.darek.logapp.domain.ports.EventLogDatabase;
 
 import java.util.Map;
 
-public class InMemoryEventLogDatabase implements EventLogDatabase {
+class InMemoryEventLogDatabase implements EventLogDatabase {
     private Map<String, LogEventInMemoryEntity> memo;
 
     public InMemoryEventLogDatabase(Map<String, LogEventInMemoryEntity> memo) {

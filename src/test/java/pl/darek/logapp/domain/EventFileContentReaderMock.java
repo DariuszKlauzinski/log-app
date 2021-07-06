@@ -6,7 +6,7 @@ import pl.darek.logapp.domain.ports.EventFileContentReader;
 
 import java.util.List;
 
-public class EventFileContentReaderMock implements EventFileContentReader {
+class EventFileContentReaderMock implements EventFileContentReader {
     private List<LogEvent> content;
 
     public EventFileContentReaderMock(List<LogEvent> content) {
